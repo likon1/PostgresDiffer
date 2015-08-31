@@ -1,0 +1,33 @@
+{
+  "maxerr"        : 10,       // {int} Maximum error before stopping
+  "bitwise"       : true,     // true: Prohibit bitwise operators (&, |, ^, etc.)
+  "camelcase"     : true,    // true: Identifiers must be in camelCase
+  "curly"         : true,     // true: Require {} for every new block or scope
+  "eqeqeq"        : true,     // true: Require triple equals (===) for comparison
+  "forin"         : false,     // true: Require filtering for..in loops with obj.hasOwnProperty()
+  "freeze"        : true,     // true: prohibits overwriting prototypes of native objects such as Array, Date etc.
+  "indent"        : 4,        // {int} Number of spaces to use for indentation
+  "noempty"       : true,     // true: Prohibit use of empty blocks
+  "nonbsp"        : true,     // true: Prohibit "non-breaking whitespace" characters.
+  "quotmark"      : "single",    // Quotation mark consistency:
+  "undef"         : true,     // true: Require all non-global variables to be declared (prevents global leaks)
+  "unused"        : true,     // Unused variables
+  "strict"        : false,     // true: Requires all functions run in ES5 Strict Mode
+  "maxparams"     : 6,    // {int} Max number of formal params allowed per function
+  "maxdepth"      : 6,    // {int} Max depth of nested blocks (within functions)
+  "maxstatements" : 15,    // {int} Max number statements per function
+  "maxcomplexity" : 12,    // {int} Max cyclomatic complexity per function
+  "maxlen"        : 130,   // {int} Max number of characters per line
+  "globals"      : {
+        "require"    : false,
+        "describe"   : false,
+        "it"         : false,
+        "before"     : false,
+        "beforeEach" : false,
+        "after"      : false,
+        "afterEach"  : false,
+        "module"     : false,
+        "console"    : false
+      },
+  "esnext" : true
+}

@@ -1,0 +1,42 @@
+{
+  "name": "DifferPostgres",
+  "version": "0.0.0",
+  "description": "AppTool to manage version of the postresql integration and production database",
+  "main": "Gulpfile.js",
+  "dependencies": {
+    "pg-json-data-export": "^0.10.4"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.2.1",
+    "gulp-clean": "^0.3.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-istanbul": "^0.10.0",
+    "gulp-jasmine": "^2.0.1",
+    "gulp-jsdoc": "^0.1.4",
+    "gulp-jshint": "^1.11.2",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-tslint": "^3.2.0",
+    "gulp-tslint-stylish": "^1.0.4",
+    "gulp-typescript": "^2.8.1",
+    "gulp-uglify": "^1.4.0",
+    "gulp-watch": "^4.3.5",
+    "jasmine-core": "^2.3.4",
+    "jshint-stylish": "^2.0.1",
+    "karma": "^0.13.9",
+    "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "phantomjs": "^1.9.18"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "keywords": [
+    "postgresql",
+    "difference",
+    "commit",
+    "integration"
+  ],
+  "author": "Marek Mitis",
+  "license": "ISC"
+}
