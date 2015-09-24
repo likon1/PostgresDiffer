@@ -20,9 +20,9 @@ gulp.task('build', function () {
         .pipe(babel({
             comments: false
         }))
-        .pipe(uglify())
+        //.pipe(uglify())
         .pipe(sourcemaps.write('./maps'))
-        .pipe(gulp.dest('dist/core'));
+        .pipe(gulp.dest('dist'));
 });
 
 gulp.task('clean', function () {
@@ -45,7 +45,7 @@ gulp.task('watch', function(){
 
 //Run tests and coverages
 gulp.task('test', function (cb) {
-    gulp.src('./lib/**/*.js')
+    gulp.src('./src/**/*.js')
         .pipe(istanbul({includeUntested: true})) // Covering files
         .pipe(istanbul.hookRequire()) // Force `require` to return covered files
         .on('finish', function () {

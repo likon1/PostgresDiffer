@@ -1,9 +1,9 @@
 /**
  * Created by mmitis on 31.08.15.
  */
-import exec from 'child_process';
+var exec = require('child_process').exec;
 
-class Differ {
+var Differ = function (){};
 
     /**
      * Make database dump to the selected file and call callback with the data dumped;
@@ -17,15 +17,31 @@ class Differ {
      * @param callback {function} executes with the data param when finished
      * @requires pg_dump library
      */
-     getDump(location , database , callback){
-        let child = child_process.exec('cat *.js bad_file | wc -l',
-            function (error , stdout, stderr) {
-                console.log('stdout: ' + stdout);
-                console.log('stderr: ' + stderr);
-                if (error !== null) {
-                    console.log('exec error: ' + error);
-                }
-            });
-    }
-}
-var link = 'postgres://lik0n_knpiapi:knpiapi@95.211.178.6/lik0n_knpiapi';
+Differ.prototype.getDump = function(location , database , callback){
+
+    var isWin = /^win/.test(process.platform);
+
+    console.log(isWin);
+
+
+    var child = exec('SET PGPASSWORD="'+ database.password +'" | pg_dump -h ' + database.location + ' -U ' +
+                        database.user + ' -s -n '+ database.schema +' -f ' + location + ' '+ database.db +';',
+        function (error , stdout, stderr) {
+            console.log('stderr: ' + stderr);
+            if (error !== null) {
+                console.log('exec error: ' + error);
+            }
+
+        });
+};
+//var link = 'postgres://lik0n_knpiapi:knpiapi@95.211.178.6/lik0n_knpiapi';
+
+
+new Differ().getDump( 'file.sql', {
+    location: '10.177.71.53',
+    user: 'jes_rdbs_rw',
+    password: '1a885eec-e0a3-4dd1-a779-571f48a1de4d',
+    schema : 'api',
+    db: 'social_jesdb_dev'
+
+});
