@@ -32,5 +32,10 @@
     "integration"
   ],
   "author": "Marek Mitis",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "diff": "^2.1.2",
+    "jsdiff": "^1.1.1",
+    "q": "^1.4.1"
+  }
 }
