@@ -27,7 +27,8 @@
         "after"      : false,
         "afterEach"  : false,
         "module"     : false,
-        "console"    : false
+        "console"    : false,
+        "process"    : false
       },
   "esnext" : true
 }

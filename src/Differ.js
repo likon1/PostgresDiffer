@@ -21,11 +21,15 @@ Differ.prototype.getDump = function(location , database , callback){
 
     var isWin = /^win/.test(process.platform);
 
-    console.log(isWin);
+    var systemCommands = {
 
+        'windows' : 'SET PGPASSWORD="'+ database.password +'" | pg_dump -h ' + database.location + ' -U ' +
+                    database.user + ' -s -n '+ database.schema +' -f ' + location + ' '+ database.db +';',
+        'bash'    : 'EXPORT PGPASSWORD="'+ database.password +'" | pg_dump -h ' + database.location + ' -U ' +
+                    database.user + ' -s -n '+ database.schema +' -f ' + location + ' '+ database.db +'; unset PGPASSWORD;'
+    };
 
-    var child = exec('SET PGPASSWORD="'+ database.password +'" | pg_dump -h ' + database.location + ' -U ' +
-                        database.user + ' -s -n '+ database.schema +' -f ' + location + ' '+ database.db +';',
+    exec(isWin ? systemCommands.windows : systemCommands.bash,
         function (error , stdout, stderr) {
             console.log('stderr: ' + stderr);
             if (error !== null) {
