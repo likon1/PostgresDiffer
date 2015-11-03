@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Postgres Differ</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body style="background: #1F1F1F">
+
+    <aside class="sidebar"></aside>
+    <div style="margin-left: 200px; width: calc(100% - 200px); height: 100%;">
+        <div class="content-containers">
+            <header class="file-header">Source File</header>
+
+            <div id="file-source" class="file-content file-source">
+
+            </div>
+            <script>
+                var gui = require('nw.gui');
+                var fs = require('fs');
+                var file = fs.readFileSync('package.json');
+                var element = new gui.ElementName('.file-source');
+            </script>
+        </div>
+        <div class="content-containers">
+            <header class="file-header">Destination File</header>
+        </div>
+        <div class="content-containers bottom">
+            <header class="file-header">Merged Changes File</header>
+        </div>
+    </div>
+
+
+    <footer class="statusbar"></footer>
+</body>
+</html>

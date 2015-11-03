@@ -2,7 +2,7 @@
   "name": "DifferPostgres",
   "version": "0.0.0",
   "description": "AppTool to manage version of the postresql integration and production database",
-  "main": "Gulpfile.js",
+  "main": "src/front/index.html",
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-babel": "^5.2.1",
@@ -22,8 +22,22 @@
     "jshint-stylish": "^2.0.1",
     "phantomjs": "^1.9.18"
   },
+  "window": {
+    "title": "Postgres Differ",
+    "icon": "link.png",
+    "toolbar": false,
+    "frame": true,
+    "width": 1200,
+    "height": 700,
+    "position": "mouse",
+    "min_width": 400,
+    "min_height": 200,
+    "max_width": 1200,
+    "max_height": 700
+  },
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp test",
+    "start": "nw"
   },
   "keywords": [
     "postgresql",
@@ -36,6 +50,7 @@
   "dependencies": {
     "diff": "^2.1.2",
     "jsdiff": "^1.1.1",
+    "nw": "^0.12.3",
     "q": "^1.4.1"
   }
 }
